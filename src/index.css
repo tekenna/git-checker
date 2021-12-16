@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1f1f1f;
+  font-family: "Titillium Web", sans-serif !important;
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  padding: 1rem 5rem;
+  background: #121212;
+  color: #21e6c1;
+}
+
+form {
+  display: flex;
+  max-width: fit-content;
+  margin: 2rem auto;
+}
+input {
+  padding: 0.3rem 0.6rem;
+  flex-grow: 1;
+}
+form button {
+  padding: 0.3rem 1rem;
+  outline: none;
+  cursor: pointer;
+  margin-left: 1rem;
+  background: #424242;
+  border-radius: 4px;
+  color: #eaeaea;
+  border: none;
+}
+
+.grid {
+  padding: 0 5rem;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+#main-profile {
+  padding: 1rem;
+  background: #121212;
+  box-shadow: 2px 2px 10px rgba(0, 20, 48, 0.15);
+  border-radius: 5px;
+  color: #eaeaea;
+  border: 1px solid #21e6c1;
+  width: 30%;
+  margin-right: 1rem;
+  padding-bottom: 2rem;
+}
+.others {
+  width: 70%;
+}
+#content1,
+#content4 {
+  padding: 1rem;
+  background: #121212;
+  box-shadow: 2px 2px 10px rgba(0, 20, 48, 0.15);
+  border-radius: 5px;
+  color: #eaeaea;
+}
+
+#content4 {
+  padding: 0;
+  margin-top: 1rem;
+}
+.img-container {
+  width: 50%;
+  min-height: 10rem;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+.img-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 1px dotted #21e6c1;
+}
+.meta {
+  color: #21e6c1;
+  margin-bottom: 1rem;
+}
+
+.details span {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px dotted #21e6c1;
+}
+.details span p {
+  margin-left: 1rem;
+}
+.details span svg {
+  color: #21e6c1;
+}
+
+#content1 span {
+  display: flex;
+  grid-template-columns: 4fr 10fr;
+  margin-bottom: 1rem;
+}
+#content1 span p {
+  font-size: 0.9rem;
+}
+#content1 span p:nth-child(2),
+#content1 span a {
+  margin-left: 1rem;
+}
+#content1 span a {
+  color: #21e6c1;
+}
+.heading {
+  width: max-content;
+  display: inline;
+}
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+.MuiTableCell-body,
+.MuiTablePagination-toolbar,
+.MuiIconButton-root.Mui-disabled,
+.MuiFormLabel-root {
+  color: #eaeaea !important;
+  font-family: "Titillium Web", sans-serif !important;
+}
+
+.MuiTablePagination-spacer + p {
+  display: none !important;
+}
+.MuiTablePagination-input {
+  display: none !important;
+}
+.MuiTableContainer-root {
+  background-color: #121212 !important;
+}
+.MuiOutlinedInput-notchedOutline {
+  border-color: #21e6c1 !important;
+}
+.MuiFormLabel-root {
+  color: #21e6c28e !important;
+}
+.MuiTableCell-root {
+  border-bottom: none !important;
+}
+.MuiInputBase-input,
+.MuiTableCell-head {
+  color: #21e6c1 !important;
+}
+.MuiSkeleton-root {
+  background-color: #eaeaea98 !important;
+}
+.contain {
+  position: absolute;
+  height: 0;
+  width: 0;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+  z-index: 20;
+}
+.error-message {
+  position: absolute;
+  display: flex;
+  width: 50vw;
+  justify-content: space-between;
+  align-items: center;
+  color: #a32828;
+  background-color: #000000;
+  margin: auto;
+  padding: 1rem;
+  visibility: hidden;
+  z-index: 22;
+  left: 50%;
+  transform: translateX(50%) translateY(75vh);
+  top: 70%;
+  z-index: 12;
+  transition: all 0.6s;
+  box-shadow: 1px 1px 10px #000d1d;
+}
+
+.error-message.open {
+  visibility: visible;
+  transition: visibility 0.6s;
+  transform: translateX(50%) translateY(65vh);
+}
+.error-message.open ~ .overlay {
+  visibility: visible;
+}
+@keyframes slideIn {
+  from {
+    top: 80%;
+    visibility: hidden;
+  }
+  to {
+    top: 80%;
+    visibility: visible;
+  }
+}
+@media only screen and (max-width: 900px) {
+  nav {
+    padding: 1rem 3rem;
+  }
+  .grid {
+    padding: 0 3rem;
+  }
+
+  html {
+    font-size: 90%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    padding: 1.5rem 2rem;
+  }
+  .grid {
+    padding: 0 2rem;
+  }
+
+  html {
+    font-size: 88%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  nav {
+    padding: 1.5rem 19vw;
+  }
+  .grid {
+    padding: 0 19vw;
+    flex-direction: column;
+  }
+
+  #main-profile {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .others {
+    width: 100%;
+  }
+  .MuiSkeleton-circle {
+    height: 29vw !important;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  nav {
+    padding: 1.5rem 1.9rem;
+  }
+  .grid {
+    padding: 0 1.9rem;
+    flex-direction: column;
+  }
+  .MuiSkeleton-circle {
+    height: 39vw !important;
+  }
+  form {
+    max-width: 100%;
+    margin: 2rem 1.9rem;
+    display: flex;
+    justify-content: center;
+  }
+}
